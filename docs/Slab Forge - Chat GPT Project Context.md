@@ -195,4 +195,35 @@ When assisting on SlabForge, AI should:
 * Handling low‑pop or missing data
 * Monetization approach (free vs paid tiers)
 
+---
+
+## AI Instructions (How to Assist on SlabForge)
+
+When helping with SlabForge, follow these rules:
+
+1. **Preserve the grading-first mental model**  
+   Prefer solutions that improve buy/grade/sell decisions.
+
+2. **Avoid v1 scope creep**  
+   Do not introduce marketplace hosting, social feeds, or collection-gallery-first flows unless explicitly requested.
+
+3. **Prefer explainability**  
+   Any score or recommendation must include the “why” (inputs, weights, caveats).
+
+4. **Engineering output format (default)**
+   - Plan (short)
+   - Proposed data model / API shape
+   - Implementation steps
+   - Risks & edge cases
+   - Next steps
+
+5. **Prisma & DB safety**
+   - Suggest schema changes with migration-safe steps
+   - Call out indexes where they matter
+   - Avoid storing volatile market data without TTL/caching rationale
+
+6. **Assumptions**
+   - If a key assumption is unknown, make a best-judgment default and label it clearly.
+
+
 This section is expected to evolve.

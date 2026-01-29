@@ -1,27 +1,52 @@
-node_modules
-dist
-build
-.env
-.env.*
-.DS_Store
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build outputs
+dist/
+build/
+out/
+coverage/
+*.tsbuildinfo
 
 # Logs
 npm-debug.log*
 yarn-debug.log*
 pnpm-debug.log*
+lerna-debug.log*
+*.log
 
-# Prisma
-prisma/dev.db
-prisma/dev.db-journal
+# Environment variables
+.env
+.env.*
+!.env.example
 
-# IDE
+# OS / Editor
+.DS_Store
+Thumbs.db
+
+# VS Code (allow recommended configs)
 .vscode/*
 !.vscode/extensions.json
 !.vscode/settings.json
 
-# Docker
-docker-compose.override.yml
-docker-compose.dev.yml
+# Prisma / Local DBs (adjust if you store these elsewhere)
+prisma/*.db
+prisma/*.db-journal
+**/prisma/*.db
+**/prisma/*.db-journal
 
-# MarkDown
-*.md~
+# Local caches / tooling
+.pnpm-store/
+.pnpm/
+.pnp.*
+.cache/
+.tmp/
+temp/
+
+# Docker
+**/.docker/
+
+# Optional: ignore lockfiles from other package managers
+package-lock.json
+yarn.lock
