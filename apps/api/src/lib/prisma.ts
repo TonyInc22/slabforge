@@ -1,0 +1,17 @@
+import "dotenv/config";
+import { PrismaClient } from "@prisma/client";
+import { Pool } from "pg";
+import { PrismaPg } from "@prisma/adapter-pg";
+
+if (!process.env.DATABASE_URL) {
+  throw new Error("DATABASE_URL is missing. Check apps/api/.env");
+}
+
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+});
+
+const adapter = new PrismaPg(pool);
+
+// Prisma 7 requires a non-empty options object here:
+export const prisma = new PrismaClient({ adapter });
